@@ -1,10 +1,34 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        filler();
+
+    }
+
+    //a little system with a HashMap:
+    public static void filler() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        HashMap<String, Integer> users = new HashMap<>();
+
+        System.out.println("What would you like your username to be?");
+        String username = scanner.nextLine();
+
+        int id = random.nextInt(100_000_000, 1_000_000_000) + 1;
+
+        users.put(username, id);
+        System.out.println(users);
+    }
+
+    public static void learnAboutArrayAndLinkedList() {
         //faster at getting an item for example namesArrayList.get(index);
         ArrayList<String> namesArrayList = new ArrayList<>();
         namesArrayList.add("Nick");
@@ -12,7 +36,7 @@ public class Main {
         namesArrayList.add("Nicole");
         namesArrayList.add("Daniel");
         namesArrayList.add(3, "Paul");
-        
+
         //methods for ArrayList
         namesArrayList.add("Nick");
         namesArrayList.add("Ben");
@@ -41,6 +65,13 @@ public class Main {
         System.out.println(namesLinkedList.getLast());
         namesLinkedList.add(3, "Paulus");
         //and many more useful methods
+
+        //HashMap
+
+        HashMap<String, Integer> users = new HashMap<>();
+        users.put("Paul", 69420);
+        users.clear(); //deletes Paul and the custom id
+        System.out.println(users);
     }
 
 }
